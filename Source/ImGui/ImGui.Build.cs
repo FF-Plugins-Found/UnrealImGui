@@ -12,9 +12,10 @@ public class ImGui : ModuleRules
 	public ImGui(TargetInfo Target)
 #endif
 	{
+        PublicDefinitions.Add("IMGUI_DEFINE_MATH_OPERATORS");
 
 #if WITH_FORWARDED_MODULE_RULES_CTOR
-		bool bBuildEditor = Target.bBuildEditor;
+        bool bBuildEditor = Target.bBuildEditor;
 #else
 		bool bBuildEditor = (Target.Type == TargetRules.TargetType.Editor);
 #endif
